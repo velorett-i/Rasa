@@ -111,6 +111,7 @@ nlu:
     - I need help
     - help
     - I need to find help where i am
+    - Where am I
 
 - intent: query_knowledge_base
   examples: | 
