@@ -26,18 +26,51 @@ stories:
   - intent: affirm
   - action: utter_start_questionaire
   - intent: affirm
-  - action: utter_question_1
+  - action: utter_questionaire_ptsd_start
+  - action: utter_ptsd_1
+  - action: utter_ptsd_2
+  - action: utter_ptsd_3
+  - action: utter_ptsd_4
+  - action: utter_ptsd_5
+  - action: utter_ptsd_6
+  - action: utter_ptsd_7
+  - action: utter_ptsd_8
+  - action: utter_ptsd_9
+  - action: utter_ptsd_10
+  - action: utter_ptsd_11
+  - action: utter_ptsd_12
+
 
 
 - story: mental_assessment_adult
   steps:
   - checkpoint: check_age
-  - intent: deny
+  - intent: affirm
   - action: utter_ask_assessment
   - intent: affirm
-  - action: utter_start_questionnaire_adults
-  - intent: affirm
-  - action: utter_question_1_adults
+  - action: utter_questionaire_ptsd_start_adults
+  - action: utter_ptsd_1_adults
+  - action: utter_ptsd_2_adults
+  - action: utter_ptsd_3_adults
+  - action: utter_ptsd_4_adults
+  - action: utter_ptsd_5_adults
+  - action: utter_ptsd_6_adults
+  - action: utter_ptsd_7_adults
+  - action: utter_ptsd_8_adults
+  - action: utter_ptsd_9_adults
+  - action: utter_ptsd_10_adults
+  - action: utter_ptsd_11_adults
+  - action: utter_ptsd_12_adults
+  - action: utter_ptsd_13_adults
+  - action: utter_ptsd_14_adults
+  - action: utter_ptsd_15_adults
+  - action: utter_ptsd_16_adults
+  - action: utter_ptsd_17_adults
+  - action: utter_ptsd_18_adults
+  - action: utter_ptsd_19_adults
+  - action: utter_ptsd_20_adults
+
+
   
 
 
