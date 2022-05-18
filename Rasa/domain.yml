@@ -104,6 +104,247 @@ responses:
   utter_country_help:
   - text: "Ok, since you're in {pais}, I will foward you the help that is available to you there."
 
+  utter_ask_age:
+  - text: "How old are you, {first_name}?"
+
+  utter_ask_assessment:
+  - text: "I would like to ask you some questions about the way you're feeling {first_name}, is that okay with you?"
+
+#Questionario PTSD (adolescentes e crianças 7 aos 17 anos)
+
+  utter_start_questionaire:
+  - text: "Stressful or scary events happen to many people. I will now list a series of stressful and scary events that sometimes happen. 
+  What I'm gonna ask you to do isto to mark YES if it happened to you or NO it it didn't. Is that okay?"
+  
+  utter_question_1:
+  - text: "Good! Let's start with the first question! Just type Yes or No for the answer, please.
+  Have you witness a serious natural disaster (flood, tornado, hurricane, fire, etc..)?"
+
+  utter_question_2:
+  - text: "Serious accident or injury like a car/bike crash?"
+
+  utter_question_3:
+  - text: "Threatened, hit or hurt badly in your family?"
+
+  utter_question_4:
+  - text: "Threatened, hit or hurt badly in your school or your community?"
+
+  utter_question_5:
+  - text: "Have you been attacked, stabbed, shot at or robbed by threat?"
+
+  utter_question_6:
+  - text: "Have you seen someone in your family threatened, hit or hurt badly"
+
+  utter_question_7:
+  - text: "Have you seen someone in school or the community threatened, hit or hurt badly"
+
+  utter_question_8:
+  - text: "Someone touching your private parts when they shouldn’t. Or making you touch their private parts"
+
+  utter_question_9:
+  - text: "Someone forcing or pressuring you to do sexual things. Or having to do sexual things when you couldn’t say no. "
+
+  utter_question_10:
+  - text: "Someone asking or pressuring you online to take or send pictures of my private parts. Or to touch yourself"
+
+  utter_question_11:
+  - text: "Someone close to you dying suddenly or violently"
+
+  utter_question_12:
+  - text: "Stressful or scary medical procedure."
+
+  utter_question_13:
+  - text: "Being around war."
+
+  utter_question_14:
+  - text: "Other stressful or scary events?"
+
+# Se responder sim a alguma destas perguntas parar o quesrtionario e passar para as próximas perguntas
+
+  utter_questionaire_ptsd:
+  - text: "I am so sorry that you went through that {first_name}, thank you for telling me about your experience.
+  Remember that you are not alone, there's a lot of people who have had experiences like these.
+  Now, I need you to answer some more questions so I can understand how you're dealing with these experiences.
+  Is that okay?"
+
+  utter_questionaire_ptsd_start:
+  - text: "Okay, thank you for beeing so cooperative {first_name}
+  I will start the second part of the questionaire now.
+  Now, I will list some problemas that can happen to people after an upsetting or stressful event.
+  What I want you to do is, thinking about that event, tell me how much the following this have bothered you in the past month.
+  "
+
+  utter_ptsd_1:
+  - text: "Picture in your head of what happened. Feels like it is happening right now"
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_2:
+  - text: "Bad dreams reminding you of what happened."
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_3:
+  - text: "Trying not to think about what happened. Or to not have feelings about it."
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_4:
+  - text: "Staying away from anything that reminds you of what happened (people, places, things, situations, talks). "
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_5:
+  - text: "Being overly careful (checking to see who is around you). "
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_6:
+  - text: "Being jumpy."
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_7:
+  - text: "Having trouble calming down when you are upset (angry, scared or sad). "
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"Self_Organization_Score":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"Self_Organization_Score": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"Self_Organization_Score": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"Self_Organization_Score": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"Self_Organization_Score": "4"}'
+  
+  utter_ptsd_8:
+  - text: "Not being able to have any feelings or feeling empty inside."
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"Self_Organization_Score":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"Self_Organization_Score": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"Self_Organization_Score": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"Self_Organization_Score": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"Self_Organization_Score": "4"}'
+  
+  utter_ptsd_9:
+  - text: "Feeling like a failure."
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"Self_Organization_Score":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"Self_Organization_Score": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"Self_Organization_Score": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"Self_Organization_Score": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"Self_Organization_Score": "4"}'
+  
+  utter_ptsd_10:
+  - text: "Thinking you're not a good person."
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"Self_Organization_Score":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"Self_Organization_Score": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"Self_Organization_Score": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"Self_Organization_Score": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"Self_Organization_Score": "4"}'
+  
+  utter_ptsd_11:
+  - text: "Not feeling close to other peolpe."
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"Self_Organization_Score":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"Self_Organization_Score": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"Self_Organization_Score": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"Self_Organization_Score": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"Self_Organization_Score": "4"}'
+  
+  utter_ptsd_12:
+  - text: "Having a hard time staying close to other people."
+  buttons:
+    - title: "0 - Never"
+      payload: '/inform{"Self_Organization_Score":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"Self_Organization_Score": "1"}'
+    - title: "2 - Sometimes"
+      payload: '/inform{"Self_Organization_Score": "2"}'
+    - title: "3 - A lor"
+      payload: '/inform{"Self_Organization_Score": "3"}'
+    - title: "4 - Almost always"
+      payload: '/inform{"Self_Organization_Score": "4"}'
+  
+
+
+
 actions:
 - utter_greet
 - utter_slots_values
