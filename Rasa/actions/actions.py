@@ -101,5 +101,17 @@ class ActionMyKB(ActionQueryKnowledgeBase):
         super().__init__(knowledge_base)
 
         
+class PTSDScoreCalculator(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_score_form"
 
-    
+    def calculator(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate `utter_ptsd_1` value."""
+
+        while #wont work ....

@@ -621,8 +621,9 @@ actions:
 - utter_country_help
 - action_query_knowledge_base
 - utter_start_questionaire
+- validade_score_form
 
 
-ession_config:
+session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
