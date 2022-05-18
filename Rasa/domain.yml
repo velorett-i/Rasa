@@ -12,6 +12,9 @@ intents:
   - give_name
   - ask_country
   - query_knowledge_base
+  - ask_mental_assessment
+  - give_age
+
 
 entities:
 - pais
@@ -25,11 +28,17 @@ forms:
   name_form:
     required_slots:
       - first_name
+
   country_form:
     required_slots:
       - country
 
+  age_form:
+    required_slots:
+    - age
+
 slots:
+
   object_type:
     type: text
     influence_conversation: false
@@ -53,6 +62,22 @@ slots:
          - active_loop: name_form
            requested_slot: first_name
 
+  age:
+    type: bool
+    mappings:
+      - type: from_intent
+        intent: affirm
+        value: true 
+        conditions:
+        - active_loop: age_form
+          requested_slot: age
+      - type: from_intent
+        intent: deny
+        value: false
+        conditions:
+        - active_loop: age_form
+          requested_slot: age
+          
   country:
     type: text
     influence_conversation: true
@@ -74,11 +99,11 @@ slots:
       - type: from_entity
         entity: pais
 
-
-
 responses:
+
   utter_greet:
-  - text: "Hey! I am (...). Can you tell me your name?"
+  - text: "Hey! I am (...). I was created to help people find help in different countries, and to 
+  help assess your mental health.  Can you tell me your name?"
 
   utter_did_that_help:
   - text: "Did that help you?"
@@ -105,10 +130,17 @@ responses:
   - text: "Ok, since you're in {pais}, I will foward you the help that is available to you there."
 
   utter_ask_age:
-  - text: "How old are you, {first_name}?"
+  - text: "Ok, first of all, I need to know a little more about you.
+  Are you 18 or older, {first_name}?"
 
   utter_ask_assessment:
   - text: "I would like to ask you some questions about the way you're feeling {first_name}, is that okay with you?"
+
+  utter_kind_of_help:
+  - text: "What can I do for you today?"
+
+  utter_test:
+  - text: "funciona"
 
 #Questionario PTSD (adolescentes e crianças 7 aos 17 anos)
 
@@ -119,6 +151,11 @@ responses:
   utter_question_1:
   - text: "Good! Let's start with the first question! Just type Yes or No for the answer, please.
   Have you witness a serious natural disaster (flood, tornado, hurricane, fire, etc..)?"
+    buttons:
+      - title: "Yes"
+        payload: '/utter_questionaire_ptsd'
+      - title: "No"
+        payload: '/utter_question_2'
 
   utter_question_2:
   - text: "Serious accident or injury like a car/bike crash?"
@@ -183,165 +220,165 @@ responses:
       payload: '/inform{"PTSDScore": "1"}'
     - title: "2 - Sometimes"
       payload: '/inform{"PTSDScore": "2"}'
-    - title: "3 - A lor"
+    - title: "3 - A lot"
       payload: '/inform{"PTSDScore": "3"}'
     - title: "4 - Almost always"
       payload: '/inform{"PTSDScore": "4"}'
 
   utter_ptsd_2:
   - text: "Bad dreams reminding you of what happened."
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"PTSDScore":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"PTSDScore": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"PTSDScore": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"PTSDScore": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"PTSDScore": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"PTSDScore":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"PTSDScore": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"PTSDScore": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"PTSDScore": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"PTSDScore": "4"}'
 
   utter_ptsd_3:
   - text: "Trying not to think about what happened. Or to not have feelings about it."
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"PTSDScore":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"PTSDScore": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"PTSDScore": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"PTSDScore": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"PTSDScore": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"PTSDScore":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"PTSDScore": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"PTSDScore": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"PTSDScore": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"PTSDScore": "4"}'
 
   utter_ptsd_4:
   - text: "Staying away from anything that reminds you of what happened (people, places, things, situations, talks). "
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"PTSDScore":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"PTSDScore": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"PTSDScore": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"PTSDScore": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"PTSDScore": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"PTSDScore":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"PTSDScore": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"PTSDScore": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"PTSDScore": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"PTSDScore": "4"}'
 
   utter_ptsd_5:
   - text: "Being overly careful (checking to see who is around you). "
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"PTSDScore":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"PTSDScore": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"PTSDScore": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"PTSDScore": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"PTSDScore": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"PTSDScore":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"PTSDScore": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"PTSDScore": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"PTSDScore": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"PTSDScore": "4"}'
 
   utter_ptsd_6:
   - text: "Being jumpy."
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"PTSDScore":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"PTSDScore": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"PTSDScore": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"PTSDScore": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"PTSDScore": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"PTSDScore":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"PTSDScore": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"PTSDScore": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"PTSDScore": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"PTSDScore": "4"}'
 
   utter_ptsd_7:
   - text: "Having trouble calming down when you are upset (angry, scared or sad). "
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"Self_Organization_Score":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"Self_Organization_Score": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"Self_Organization_Score": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"Self_Organization_Score": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"Self_Organization_Score": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"Self_Organization_Score":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"Self_Organization_Score": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"Self_Organization_Score": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"Self_Organization_Score": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"Self_Organization_Score": "4"}'
   
   utter_ptsd_8:
   - text: "Not being able to have any feelings or feeling empty inside."
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"Self_Organization_Score":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"Self_Organization_Score": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"Self_Organization_Score": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"Self_Organization_Score": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"Self_Organization_Score": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"Self_Organization_Score":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"Self_Organization_Score": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"Self_Organization_Score": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"Self_Organization_Score": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"Self_Organization_Score": "4"}'
   
   utter_ptsd_9:
   - text: "Feeling like a failure."
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"Self_Organization_Score":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"Self_Organization_Score": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"Self_Organization_Score": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"Self_Organization_Score": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"Self_Organization_Score": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"Self_Organization_Score":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"Self_Organization_Score": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"Self_Organization_Score": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"Self_Organization_Score": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"Self_Organization_Score": "4"}'
   
   utter_ptsd_10:
   - text: "Thinking you're not a good person."
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"Self_Organization_Score":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"Self_Organization_Score": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"Self_Organization_Score": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"Self_Organization_Score": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"Self_Organization_Score": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"Self_Organization_Score":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"Self_Organization_Score": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"Self_Organization_Score": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"Self_Organization_Score": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"Self_Organization_Score": "4"}'
   
   utter_ptsd_11:
   - text: "Not feeling close to other peolpe."
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"Self_Organization_Score":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"Self_Organization_Score": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"Self_Organization_Score": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"Self_Organization_Score": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"Self_Organization_Score": "4"}'
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"Self_Organization_Score":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"Self_Organization_Score": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"Self_Organization_Score": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"Self_Organization_Score": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"Self_Organization_Score": "4"}'
   
   utter_ptsd_12:
   - text: "Having a hard time staying close to other people."
-  buttons:
-    - title: "0 - Never"
-      payload: '/inform{"Self_Organization_Score":"0"}'
-    - title: "1 - A little bit"
-      payload: '/inform{"Self_Organization_Score": "1"}'
-    - title: "2 - Sometimes"
-      payload: '/inform{"Self_Organization_Score": "2"}'
-    - title: "3 - A lor"
-      payload: '/inform{"Self_Organization_Score": "3"}'
-    - title: "4 - Almost always"
-      payload: '/inform{"Self_Organization_Score": "4"}'
-  
+    buttons:
+      - title: "0 - Never"
+        payload: '/inform{"Self_Organization_Score":"0"}'
+      - title: "1 - A little bit"
+        payload: '/inform{"Self_Organization_Score": "1"}'
+      - title: "2 - Sometimes"
+        payload: '/inform{"Self_Organization_Score": "2"}'
+      - title: "3 - A lot"
+        payload: '/inform{"Self_Organization_Score": "3"}'
+      - title: "4 - Almost always"
+        payload: '/inform{"Self_Organization_Score": "4"}'
+    
 
 
 

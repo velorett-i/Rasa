@@ -2,23 +2,58 @@ version: "3.1"
 
 stories:
 
-- story: interactive_story_1
+- story: mental_assessment
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: give_name
   - action: name_form
-  - active_loop: name_form
   - slot_was_set:
     - requested_slot: first_name
   - slot_was_set:
     - first_name: Susana
-  - active_loop: null
   - action: utter_submit
   - action: utter_slots_values
-  - intent: query_knowledge_base
-  - action: utter_country_help
-  - action: action_query_knowledge_base
+  - action: utter_kind_of_help
+  - intent: ask_mental_assessment
+  - action: utter_ask_age
+  - checkpoint: check_age
+
+- story: mental_assessment_child
+  steps:
+  - checkpoint: check_age
+  - intent: deny
+  - action: utter_ask_assessment
+  - intent: affirm
+  - action: utter_start_questionaire
+  - intent: affirm
+  - action: utter_question_1
+
+
+- story: mental_assessment_adult
+  steps:
+  - checkpoint: check_age
+  - intent: affirm
+  - action: utter_test
+  
+
+
+#- story: interactive_story_1
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: give_name
+#  - action: name_form
+#  - active_loop: name_form
+#  - slot_was_set:
+#    - requested_slot: first_name
+#  - slot_was_set:
+#    - first_name: Susana
+#  - active_loop: null
+#  - action: utter_submit
+#  - action: utter_slots_values
+#  - intent: query_knowledge_base
+#  - action: utter_country_help
+#  - action: action_query_knowledge_base
 
 
 

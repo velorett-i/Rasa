@@ -83,6 +83,8 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - I'm feeling anxious
+    - anxious
 
 - intent: bot_challenge
   examples: |
@@ -111,7 +113,6 @@ nlu:
     - I need help
     - help
     - I need to find help where i am
-    - Where am I
 
 - intent: query_knowledge_base
   examples: | 
@@ -128,3 +129,19 @@ nlu:
     - Albani
     - Italy
     - Finland
+
+- intent: ask_mental_assessment
+  examples: |
+    - I don't feel good
+    - I need help with my mental state
+    - mental problems
+    - mental
+    - I feel sad
+    - I need help with how I feel
+
+- intent: give_age
+  examples: |
+    - I'm 18 years old.
+    - 36
+    - I'm 45
+    - 13
