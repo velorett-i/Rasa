@@ -32,8 +32,12 @@ stories:
 - story: mental_assessment_adult
   steps:
   - checkpoint: check_age
+  - intent: deny
+  - action: utter_ask_assessment
   - intent: affirm
-  - action: utter_test
+  - action: utter_start_questionnaire_adults
+  - intent: affirm
+  - action: utter_question_1_adults
   
 
 

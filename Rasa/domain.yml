@@ -146,7 +146,7 @@ responses:
 
   utter_start_questionaire:
   - text: "Stressful or scary events happen to many people. I will now list a series of stressful and scary events that sometimes happen. 
-  What I'm gonna ask you to do isto to mark YES if it happened to you or NO it it didn't. Is that okay?"
+  What I'm gonna ask you to do is to to mark YES if it happened to you or NO it it didn't. Is that okay?"
   
   utter_question_1:
   - text: "Good! Let's start with the first question! Just type Yes or No for the answer, please.
@@ -379,8 +379,308 @@ responses:
       - title: "4 - Almost always"
         payload: '/inform{"Self_Organization_Score": "4"}'
     
+#Questionario PTSD (adultos)
+utter_start_questionaire_adults:
+  - text: "Stressful or scary events happen to many people. I will now list a series of stressful and scary events that sometimes happen. 
+  What I'm gonna ask you to do is to to mark YES if it happened to you or NO it it didn't. Is that okay?"
 
+utter_questionaire_ptsd_start_adults:
+  - text: "Okay, thank you for beeing so cooperative {first_name}
+  I will start the second part of the questionaire now.
+  Now, I will list some problemas that can happen to people after an upsetting or stressful event.
+  What I want you to do is, thinking about that event, tell me how much the following this have bothered you in the past month.
+  "
 
+ utter_question_1_adults:
+  - text: "Good! Let's start with the first question! Just type Yes or No for the answer, please.
+  Have you witness a serious natural disaster (flood, tornado, hurricane, fire, etc..)?"
+    buttons:
+      - title: "Yes"
+        payload: '/utter_questionaire_ptsd_adults'
+      - title: "No"
+        payload: '/utter_question_2_adults'
+
+# Se responder sim a alguma destas perguntas parar o quesrtionario e passar para as próximas perguntas
+
+  utter_ptsd_1_adults:
+  - text: "In the last month, how much were you bothered by repeated, disturbing, and unwanted memories of the stressful experience?"
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_2_adults:
+  - text: "In the last month, how much were you bothered by repeated, disturbing dreams of the stressful experience?"
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_3_adults:
+  - text: "In the last month, how much were you bothered by suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_4_adults:
+  - text: "In the last month, how much were you bothered by feeling very upset when something reminded you of the stressful experience? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_5_adults:
+  - text: "In the last month, how much were you bothered by having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_6_adults:
+  - text: "In the last month, how much were you bothered by avoiding memories, thoughts, or feelings related to the stressful experience?  "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_7_adults:
+  - text: "In the last month, how much were you bothered by avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?"
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_8_adults:
+  - text: "In the last month, how much were you bothered by trouble remembering important parts of the stressful experience? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_9_adults:
+  - text: "In the last month, how much were you bothered by having strong negative beliefs about yourself, other people, or the world (for example, having thoughts such as: I am bad, there is something seriously wrong with me, no one can be trusted, the world is completely dangerous)? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_10_adults:
+  - text: "In the last month, how much were you bothered by blaming yourself or someone else for the stressful experience or what happened after it?  "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_11_adults:
+  - text: "In the last month, how much were you bothered by having strong negative feelings such as fear, horror, anger, guilt, or shame?  "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_12_adults:
+  - text: "In the last month, how much were you bothered by loss of interest in activities that you used to enjoy? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_13_adults:
+  - text: "In the last month, how much were you bothered by feeling distant or cut off from other people?"
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_14_adults:
+  - text: "In the last month, how much were you bothered by trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?"
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_15_adults:
+  - text: "In the last month, how much were you bothered by irritable behavior, angry outbursts, or acting aggressively?"
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_16_adults:
+  - text: "In the last month, how much were you bothered by taking too many risks or doing things that could cause you harm?"
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_17_adults:
+  - text: "In the last month, how much were you bothered by being “superalert” or watchful or on guard? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_18_adults:
+  - text: "In the last month, how much were you bothered by feeling jumpy or easily startled? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_19_adults:
+  - text: "In the last month, how much were you bothered by having difficulty concentrating? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
+
+  utter_ptsd_20_adults:
+  - text: "In the last month, how much were you bothered by trouble falling or staying asleep? "
+    buttons:
+    - title: "0 - Never"
+      payload: '/inform{"PTSDScore":"0"}'
+    - title: "1 - A little bit"
+      payload: '/inform{"PTSDScore": "1"}'
+    - title: "2 - Moderately"
+      payload: '/inform{"PTSDScore": "2"}'
+    - title: "3 - Quite a bit"
+      payload: '/inform{"PTSDScore": "3"}'
+    - title: "4 - Extremely"
+      payload: '/inform{"PTSDScore": "4"}'
 
 actions:
 - utter_greet
