@@ -36,6 +36,9 @@ nlu:
     - that sounds good
     - correct
     - ok
+    - affirmative
+    - roger that
+    - certainly
 - intent: deny
   examples: |
     - no
@@ -45,6 +48,7 @@ nlu:
     - don't like that
     - no way
     - not really
+    - negative
 - intent: mood_great
   examples: |
     - perfect
@@ -98,6 +102,7 @@ nlu:
     - Luís
     - ana
     - morgana
+    - Luis
 - intent: ask_country
   examples: |
     - Can you help me get to a safe place?
@@ -105,6 +110,7 @@ nlu:
     - I need help
     - help
     - I need to find help where i am
+    - pick me up
 - intent: query_knowledge_base
   examples: |
     - I am in [country](attribute) and I need to find help;
@@ -140,3 +146,4 @@ nlu:
     - Albani
     - Italy
     - Finland
+    - Bulgaria
