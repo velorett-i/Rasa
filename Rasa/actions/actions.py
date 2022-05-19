@@ -124,6 +124,7 @@ class ValidateAnswer(FormValidationAction):
         ptsdnumbers.append(num19)
         ptsdnumbers.append(num20)
         Total = sum(ptsdnumbers)
+        print(Total)
 
 
 
