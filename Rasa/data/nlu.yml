@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -29,7 +27,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +36,6 @@ nlu:
     - that sounds good
     - correct
     - ok
-
 - intent: deny
   examples: |
     - no
@@ -49,7 +45,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -66,7 +61,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -85,27 +79,25 @@ nlu:
     - so sad
     - I'm feeling anxious
     - anxious
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: request_names
   examples: |
     - i want to give you my name
     - give name
     - you need to know my name
     - do you know my name?
-
 - intent: give_name
   examples: |
     - Morgana
     - Susana
     - Luís
-
+    - ana
+    - morgana
 - intent: ask_country
   examples: |
     - Can you help me get to a safe place?
@@ -113,12 +105,31 @@ nlu:
     - I need help
     - help
     - I need to find help where i am
-
 - intent: query_knowledge_base
-  examples: | 
-    - I am in [country]{"entity": "attribute", "value":"country"} and I need to find help;
-    - I'm in [country]{"entity": "attribute", "value":"country"}
-
+  examples: |
+    - I am in [country](attribute) and I need to find help;
+    - I'm in [country](attribute)
+- intent: ask_mental_assessment
+  examples: |
+    - I don't feel good
+    - I need help with my mental state
+    - mental problems
+    - mental
+    - I feel sad
+    - I need help with how I feel
+- intent: give_age
+  examples: |
+    - I'm 18 years old.
+    - 36
+    - I'm 45
+    - 13
+- intent: give_number
+  examples: |
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
 - lookup: pais
   examples: |
     - Portugal
@@ -129,20 +140,3 @@ nlu:
     - Albani
     - Italy
     - Finland
-
-- intent: ask_mental_assessment
-  examples: |
-    - I don't feel good
-    - I need help with my mental state
-    - mental problems
-    - mental
-    - I feel sad
-    - I need help with how I feel
-
-- intent: give_age
-  examples: |
-    - I'm 18 years old.
-    - 36
-    - I'm 45
-    - 13
-

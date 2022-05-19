@@ -64,6 +64,27 @@ class ValidateNameForm(FormValidationAction):
             return {"first_name": None}
         return {"first_name": name}
 
+class ValidateAnswer(FormValidationAction):
+
+    def number(self) -> Text:
+        return "validate_number_form"
+    
+    def validate_number(
+        self,
+        slot_value: Any,
+        dispacher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text,Any]:
+        """Validate 'number' value."""
+
+
+        num1 = tracker.get_slot(number)
+        num2 = tracker.get_slot(number_1)
+
+
+
+
 """
 class SeparateByAge(FormValidationAction):
 
@@ -99,19 +120,6 @@ class ActionMyKB(ActionQueryKnowledgeBase):
             "pais", lambda obj: obj["country"] + " (" + obj["info"] + ")" )
 
         super().__init__(knowledge_base)
-
         
-class PTSDScoreCalculator(FormValidationAction):
-    def name(self) -> Text:
-        return "validate_score_form"
 
-    def calculator(
-        self,
-        slot_value: Any,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: DomainDict,
-    ) -> Dict[Text, Any]:
-        """Validate `utter_ptsd_1` value."""
-
-        while #wont work ....
+    
