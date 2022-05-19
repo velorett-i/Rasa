@@ -1,0 +1,56 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Activate form
+  steps:
+  - intent: give_name
+  - action: name_form
+  - active_loop: name_form
+
+- rule: Activate form 2
+  steps:
+  - intent: give_country
+  - action: country_form
+  - active_loop: country_form
+
+- rule: Submit form
+  condition:
+  - active_loop: name_form
+  steps:
+  - action: name_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: utter_kind_of_help
+
+
+- rule: Submit form 2
+  condition:
+  - active_loop: country_form
+  steps:
+  - action: country_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_country_help
+
+
+- rule: query knowledge base
+  steps:
+  - intent: query_knowledge_base
+  - action: utter_country_help
+  - action: action_query_knowledge_base
+

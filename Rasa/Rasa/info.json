@@ -1,0 +1,19 @@
+{
+    "pais": [
+        {
+            "id": 0,
+            "country": "Austria",
+            "info": "Website: https://help.unhcr.org/austria/information-for-ukrainian-nationals/help-in-austria/ Phone Number: +43 1 2676 870 9460"
+        },
+        {
+            "id": 1,
+            "country": "Belgium",
+            "info": "Registration for temporary protection takes place at Brussels Expo, Palais (8) Heysel. The registration centre is open every weekday from 8.30 am to 5.30 pm and Saturday from 8.30 am to 13 pm. Closed on Sunday."
+        },
+        {
+            "id": 2,
+            "country": "Bulgaria",
+            "info" : "You will be allowed entry in Bulgaria if you have one of the following documents: Biometric passport, Non-biometric passport, Driving license, ID card, Birth certificate (children below 14 years old)"
+        }
+    ] 
+}
