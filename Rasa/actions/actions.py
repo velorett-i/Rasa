@@ -28,8 +28,10 @@
 
 from inspect import Attribute
 from re import L
+from tokenize import Number
 from typing import Text, List, Any, Dict
 from xml.sax.xmlreader import AttributesImpl
+from django.forms import IntegerField
 from matplotlib.pyplot import subplots_adjust
 
 from rasa_sdk import Tracker, FormValidationAction
@@ -75,13 +77,53 @@ class ValidateAnswer(FormValidationAction):
         dispacher: CollectingDispatcher,
         tracker: Tracker,
         domain: DomainDict,
-    ) -> Dict[Text,Any]:
+    ) -> Dict[Number,Any]:
         """Validate 'number' value."""
 
+        ptsdnumbers = []
 
         num1 = tracker.get_slot(number)
         num2 = tracker.get_slot(number_1)
+        num3 = tracker.get_slot(number_2)
+        num4 = tracker.get_slot(number_3)
+        num5 = tracker.get_slot(number_4)
+        num6 = tracker.get_slot(number_5)
+        num7 = tracker.get_slot(number_6)
+        num8 = tracker.get_slot(number_7)
+        num9 = tracker.get_slot(number_8)
+        num10 = tracker.get_slot(number_9)
+        num11 = tracker.get_slot(number_10)
+        num12 = tracker.get_slot(number_11)
+        num13 = tracker.get_slot(number_12)
+        num14 = tracker.get_slot(number_13)
+        num15 = tracker.get_slot(number_14)
+        num16 = tracker.get_slot(number_15)
+        num17 = tracker.get_slot(number_16)
+        num18 = tracker.get_slot(number_17)
+        num19 = tracker.get_slot(number_18)
+        num20 = tracker.get_slot(number_19)
 
+        ptsdnumbers.append(num1)
+        ptsdnumbers.append(num2)
+        ptsdnumbers.append(num3)
+        ptsdnumbers.append(num4)
+        ptsdnumbers.append(num5)
+        ptsdnumbers.append(num6)
+        ptsdnumbers.append(num7)
+        ptsdnumbers.append(num8)
+        ptsdnumbers.append(num9)
+        ptsdnumbers.append(num10)
+        ptsdnumbers.append(num11)
+        ptsdnumbers.append(num12)
+        ptsdnumbers.append(num13)
+        ptsdnumbers.append(num14)
+        ptsdnumbers.append(num15)
+        ptsdnumbers.append(num16)
+        ptsdnumbers.append(num17)
+        ptsdnumbers.append(num18)
+        ptsdnumbers.append(num19)
+        ptsdnumbers.append(num20)
+        Total = sum(ptsdnumbers)
 
 
 
