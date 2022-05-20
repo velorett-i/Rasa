@@ -73,7 +73,7 @@ class ValidateAnswer(ValidationAction):
         ptsdnumbers['num19'] = tracker.get_slot("number_18")
         ptsdnumbers['num20'] = tracker.get_slot("number_19")
        
-        Total = sum(ptsdnumbers)
+        Total = sum(ptsdnumbers.values())
 
         print(Total)
 
