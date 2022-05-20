@@ -118,6 +118,8 @@ forms:
     required_slots:
     - number_19
 
+  
+
 slots:
 
   object_type:
@@ -144,7 +146,9 @@ slots:
            requested_slot: first_name
 
   number:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -153,7 +157,9 @@ slots:
           requested_slot: number
     
   number_1:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -162,7 +168,9 @@ slots:
           requested_slot: number_1
 
   number_2:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -171,7 +179,9 @@ slots:
           requested_slot: number_2
 
   number_3:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -180,7 +190,9 @@ slots:
           requested_slot: number_3
 
   number_4:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -189,7 +201,9 @@ slots:
           requested_slot: number_4
 
   number_5:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -199,7 +213,9 @@ slots:
 
         
   number_6:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -208,7 +224,9 @@ slots:
           requested_slot: number_6
 
   number_7:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -217,7 +235,9 @@ slots:
           requested_slot: number_7
 
   number_8:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -226,7 +246,9 @@ slots:
           requested_slot: number_8
 
   number_9:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -235,7 +257,9 @@ slots:
           requested_slot: number_9
 
   number_10:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -244,7 +268,9 @@ slots:
           requested_slot: number_10
 
   number_11:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -253,7 +279,9 @@ slots:
           requested_slot: number_11
 
   number_12:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -262,7 +290,9 @@ slots:
           requested_slot: number_12
 
   number_13:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -272,7 +302,9 @@ slots:
 
 
   number_14:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -281,7 +313,9 @@ slots:
           requested_slot: number_14
 
   number_15:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -290,7 +324,9 @@ slots:
           requested_slot: number_15
 
   number_16:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -299,7 +335,9 @@ slots:
           requested_slot: number_16
 
   number_17:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -308,7 +346,9 @@ slots:
           requested_slot: number_17
 
   number_18:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -317,7 +357,9 @@ slots:
           requested_slot: number_18
 
   number_19:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -326,7 +368,9 @@ slots:
           requested_slot: number_19
 
   number_20:
-    type: text
+    type: float
+    min_value: 0
+    max_value: 5
     influence_conversation: true 
     mappings:
       - type: from_text
@@ -370,6 +414,13 @@ slots:
     mappings:
       - type: from_entity
         entity: pais
+
+  total:
+    type: float
+    min_value: 0
+    max_value: 100
+    mappings:
+      - type: custom
 
 responses:
 
@@ -667,6 +718,9 @@ responses:
 
   utter_ptsd_fim:
     - text: "Escreve 5"
+
+  utter_ptsd_score:
+    - text: "Score is {total}"
 
 
 actions:

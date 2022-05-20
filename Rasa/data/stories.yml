@@ -67,86 +67,86 @@ stories:
   - slot_was_set:
     - requested_slot: number_6
   - slot_was_set:
-    - number: give_number
+    - number_6: give_number
   - action: utter_ptsd_8_adults
   - action: number_form_7
   - slot_was_set:
     - requested_slot: number_7
   - slot_was_set:
-    - number: give_number
+    - number_7: give_number
   - action: utter_ptsd_9_adults
   - action: number_form_8
   - slot_was_set:
     - requested_slot: number_8
   - slot_was_set:
-    - number: give_number
+    - number_8: give_number
   - action: utter_ptsd_10_adults
   - action: number_form_9
   - slot_was_set:
     - requested_slot: number_9
   - slot_was_set:
-    - number: give_number
+    - number_9: give_number
   - action: utter_ptsd_11_adults
   - action: number_form_10
   - slot_was_set:
     - requested_slot: number_10
   - slot_was_set:
-    - number: give_number
+    - number_10: give_number
   - action: utter_ptsd_12_adults
   - action: number_form_11
   - slot_was_set:
     - requested_slot: number_11
   - slot_was_set:
-    - number: give_number
+    - number_11: give_number
   - action: utter_ptsd_13_adults
   - action: number_form_12
   - slot_was_set:
     - requested_slot: number_12
   - slot_was_set:
-    - number: give_number
+    - number_12: give_number
   - action: utter_ptsd_14_adults
   - action: number_form_13
   - slot_was_set:
     - requested_slot: number_13
   - slot_was_set:
-    - number: give_number
+    - number_13: give_number
   - action: utter_ptsd_15_adults
   - action: number_form_14
   - slot_was_set:
     - requested_slot: number_14
   - slot_was_set:
-    - number: give_number
+    - number_14: give_number
   - action: utter_ptsd_16_adults
   - action: number_form_15
   - slot_was_set:
     - requested_slot: number_15
   - slot_was_set:
-    - number: give_number
+    - number_15: give_number
   - action: utter_ptsd_17_adults
   - action: number_form_16
   - slot_was_set:
     - requested_slot: number_16
   - slot_was_set:
-    - number: give_number
+    - number_16: give_number
   - action: utter_ptsd_18_adults
   - action: number_form_17
   - slot_was_set:
     - requested_slot: number_17
   - slot_was_set:
-    - number: give_number
+    - number_17: give_number
   - action: utter_ptsd_19_adults
   - action: number_form_18
   - slot_was_set:
     - requested_slot: number_18
   - slot_was_set:
-    - number: give_number
+    - number_18: give_number
   - action: utter_ptsd_20_adults
   - action: number_form_19
   - slot_was_set:
     - requested_slot: number_19
   - slot_was_set:
-    - number: give_number
-  - action: utter_ptsd_fim
+    - number_19: give_number
+  - action: utter_ptsd_score
 
 
 - story: mental_assessment_child
