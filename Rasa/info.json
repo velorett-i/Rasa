@@ -14,6 +14,11 @@
             "id": 2,
             "country": "Bulgaria",
             "info" : "You will be allowed entry in Bulgaria if you have one of the following documents: Biometric passport, Non-biometric passport, Driving license, ID card, Birth certificate (children below 14 years old)"
-        }
+        },
+        {
+            "id": 3,
+            "country": "Portugal",
+            "info": 
+        },
     ] 
 }
