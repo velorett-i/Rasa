@@ -36,7 +36,6 @@ class ValidateNameForm(FormValidationAction):
             return {"first_name": None}
         return {"first_name": name}
         
-
 class ValidateAnswer(ValidationAction):
 
     def number(self) -> Text:
@@ -79,8 +78,6 @@ class ValidateAnswer(ValidationAction):
 
         return {"total": Total}
 
-
-
 """
 class SeparateByAge(FormValidationAction):
 
@@ -103,8 +100,6 @@ class SeparateByAge(FormValidationAction):
             return SlotSet("age", "under_17")
         else:
             return SlotSet("age", "above_17")
-
-
 """
 
 class ActionMyKB(ActionQueryKnowledgeBase):
@@ -116,6 +111,3 @@ class ActionMyKB(ActionQueryKnowledgeBase):
             "pais", lambda obj: obj["country"] + " (" + obj["info"] + ")" )
 
         super().__init__(knowledge_base)
-        
-
-    
