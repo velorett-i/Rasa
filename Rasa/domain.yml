@@ -733,6 +733,7 @@ actions:
 - action_query_knowledge_base
 - utter_start_questionaire
 - utter_questionaire_ptsd_start_adults
+- validate_number_form
 
 
 ession_config:

@@ -47,8 +47,9 @@ class ValidateAnswer(ValidationAction):
         dispacher: CollectingDispatcher,
         tracker: Tracker,
         domain: DomainDict,
-    ) -> Dict[Number,Any]:
-
+    ) -> Dict[Text,Any]:
+        import logging
+        logging.info("Ainda não fiz a conta!")
         ptsdnumbers = {}
 
         ptsdnumbers['num1'] = tracker.get_slot("number")
